@@ -2,7 +2,6 @@
   "name": "tix",
   "version": "0.0.0",
   "private": true,
- 
   "scripts": {
     "start": "node server.js"
   },
@@ -22,7 +21,8 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "http-errors": "^1.8.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "node": "^19.0.1"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.1.4",
