@@ -1,0 +1,127 @@
+<div class="row justify-content-lg-center g-3" style="margin: 50px;">
+  <h1 style="text-align: center"><%= title %> </h1>
+
+  <form method="POST" class="col-lg-6 col-md-10 col-sm-10">
+
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="name">Survey Name</span>
+          <input id="name" type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="Contact Name"
+          name="name" value="<%= list.title %>" required>
+      </div>
+
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="name">Author</span>
+          <input id="author" type="text" class="form-control" placeholder="Author" aria-label="Author" aria-describedby="Contact Number"
+          name="author" value="<%= list.author%>" required>
+      </div> 
+
+      <% if (title == "Question") { %>
+      <% } else { %>
+     <button type="submit" class="btn btn-primary" id="editButton"><i class="fas fa-edit fa-lg"></i> Next</button>
+     <a href="/survey-list" class="btn btn-danger btn"><i class="fas fa-backspace fa-lg"></i> Cancel</a>
+     <% } %>
+
+<div class="mx-0 mx-sm-auto">
+    <div class="card">
+      <div class="card-body">
+        <div class="text-center">
+          <i class="far fa-file-alt fa-4x mb-3 text-primary"></i>
+          <p>
+            <strong>Your opinion matters</strong>
+          </p>
+          <p>
+            Have some ideas how to improve our product?
+            <strong>Give us your feedback.</strong>
+          </p>
+        </div>
+  
+        <hr/>
+
+     
+        <a href="/add-question-mc/<%= list.id%>" id="addButton" class="btn btn-primary mb-1"><i class="fas fa-plus-circle"></i> Add Multiple Choice Question</a>
+        <a href="/add-question-tf/<%= list.id%>" id="addButton" class="btn btn-primary mb-1"><i class="fas fa-plus-circle"></i> Add T/F Question</a>
+        <a href="/add-question-sa/<%= list.id%>" id="addButton" class="btn btn-primary mb-1"><i class="fas fa-plus-circle"></i> Add Short Answer Question</a>
+
+        <br>
+        <br> 
+  
+      <% for(let count=0; count < list2.length; count++) { %>
+        
+          <p class="text-left">
+            <th scope="row"><%= count + 1 %>.</th>
+
+            <% if(list2[count].questionType == "Multiple Choice") { %>
+           
+            <strong><%= list2[count].questionText %></strong>
+            <td class="text-center"><a href="/update-question/<%= list2[count]._id %>" class="btn btn-primary btn edit"><i class="fas fa-edit fa-sm"></i> Edit</a></td>
+            <td class="text-center"><a href="/delete-question/<%= list2[count]._id %>" class="btn btn-danger btn delete"><i class="fas fa-trash-alt fa-sm"></i> Delete</a></td> 
+          </p>
+  
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="McForm<%= count + 1 %>" id="radio2Example" value="Example1" />
+            <label class="form-check-label" for="radio2Example1">
+              <%= list2[count].first_Choice %>
+            </label>           
+          </div>
+
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="McForm<%= count + 1 %>" id="radio2Example" value="Example2"/>
+            <label class="form-check-label" for="radio2Example2">
+              <%= list2[count].second_Choice %>
+            </label>
+          </div>
+
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="McForm<%= count + 1 %>" id="radio2Example" value="Example3"/>
+            <label class="form-check-label" for="radio2Example3">
+              <%= list2[count].third_Choice %>
+            </label>
+          </div>
+
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="McForm<%= count + 1 %>" id="radio2Example" value="Example4"/>
+            <label class="form-check-label" for="radio2Example4">
+              <%= list2[count].fourth_Choice %>
+            </label>
+          </div>      
+          
+          <% } else if(list2[count].questionType == "True/False"){ %>
+          <strong><%= list2[count].questionText %></strong>
+          <td class="text-center"><a href="/update-question/<%= list2[count]._id %>" class="btn btn-primary btn edit"><i class="fas fa-edit fa-sm"></i> Edit</a></td>
+          <td class="text-center"><a href="/delete-question/<%= list2[count]._id %>" class="btn btn-danger btn delete"><i class="fas fa-trash-alt fa-sm"></i> Delete</a></td> 
+        </p>
+
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="TfForm<%= count + 1 %>" id="radio2Example1" />
+          <label class="form-check-label" for="radio2Example1">
+            True
+          </label>
+          </div>
+
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="TfForm<%= count + 1 %>" id="radio2Example1" />
+          <label class="form-check-label" for="radio2Example1">
+              False
+          </label>
+          </div>
+
+          <% } else {%> 
+          <strong><%= list2[count].questionText %></strong>
+          <td class="text-center"><a href="/update-question/<%= list2[count]._id %>" class="btn btn-primary btn edit"><i class="fas fa-edit fa-sm"></i> Edit</a></td>
+          <td class="text-center"><a href="/delete-question/<%= list2[count]._id %>" class="btn btn-danger btn delete"><i class="fas fa-trash-alt fa-sm"></i> Delete</a></td> 
+        </p>
+          <div class="form-group">
+            <textarea class="form-control" id="exampleFormControlTextarea<%= count + 1 %>" rows="3"></textarea>
+          </div>
+            <% } %>
+        <% } %> 
+
+      </div>
+      <div class="card-footer text-end" >
+         <button type="submit" class="btn btn-primary"><i class="fas fa-edit fa-lg"></i> Complete</button>
+      </div>
+      </div>
+      
+      </div>
+    </form>
+</div>

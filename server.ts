@@ -14,7 +14,7 @@
  * Get port from environment and store in Express.
  */
 
-let port = normalizePort(process.env.PORT || '6543');
+let port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
@@ -60,7 +60,7 @@ server.on('listening', onListening);
     throw error;
   }
 
-  var bind = typeof port === 'string'
+  let bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port;
 
