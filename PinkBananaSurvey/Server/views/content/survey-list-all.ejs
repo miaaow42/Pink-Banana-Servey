@@ -1,0 +1,60 @@
+<div class="container" style="margin-top: 20px;">
+    <br><br><br>
+    <div>
+
+        <!-- Welcome message and Hero Button -->
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div id="cardcorner" class="p-4 mb-3">
+                        <div class="container-fluid py-5">
+                            <h1 class="display-1 fw-bold welcome">WELCOME TO </h1>
+                            <h1 class="display-1 fw-bold pinkBanana">Pink Banana</h1>
+                            <p class="col-md-8 fs-4">Making the survey <i>easier</i> is our <strong>target</strong>.
+                                <strong>Make</strong> your own survey <i>now</i>.</p>
+                            <button id="addButton" class="btn btn-info opacity-75 mb-1 text-submit fw-bold addButt"
+                                onclick="location.href='/survey-list/add-survey'">Create Survey</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-none d-lg-block">
+                        <img src="/images/groupProjectLanding.gif" width="400vw" height="auto"></div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+
+        <h1 style="text-align: left; "> <%= title %></h1>
+        <hr>
+        <br>
+
+        <!-- cards -->
+        <div class="row">
+            <% for(let count = 0; count < list.length; count++) { %>
+            <!-- Repeatable Cards Template -->
+            <div class="col-sm-6">
+                <div class="card text-white mb-3 " style="max-width: 40rem;" id="cardcorner">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-poll-h"></i> <%= list[count].title %></h5>
+                        <p class=" createdBy"><i class="fas fa-user-circle"></i> <%= list[count].author %></p>
+                        <hr>
+                        <% if(list[count].start_Date > dateNow || list[count].end_Date < dateNow) { %>
+                        <span class="badge rounded-pill bg-warning text-dark"><i class="far fa-clock fa-sm"></i> From:
+                            <%= list[count].start_Date %> To <%= list[count].end_Date %></span>
+                        <a href="/take-survey/<%= list[count]._id %>"
+                            class="btn btn-secondary btn-sm btn edit disabled"><i class="fas fa-edit fa-sm"></i> Survey
+                            expired or not started</a>
+                        <% } else {%>
+                        <span class="badge rounded-pill bg-success mb-2"><i class="far fa-clock fa-sm"></i> From:
+                            <%= list[count].start_Date %> To <%= list[count].end_Date %></span>
+                        <a href="/take-survey/<%= list[count]._id %>"
+                            class="btn btn-info opacity-100 mb-1 btn-sm btn edit cardTakeSurvey"><i class="fas fa-edit fa-sm"></i> Take
+                            Survey</a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>

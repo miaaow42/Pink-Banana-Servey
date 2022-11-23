@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<%- include('./partials/header.ejs') %> 
+</head>
+<body class="container">
+
+<!-- Navigation section-->
+<%- include('./partials/nav.ejs') %> 
+
+
+<!-- Main Content -->
+  <div class="container" style="margin-top:50px" >
+    <%- include('./content/' + page + '.ejs') %>
+  </div>
+  
+
+<footer>
+<%- include('./partials/footer.ejs') %> 
+</footer>
+
+ <!-- JavaScript Section-->
+  <script src="/jquery/dist/jquery.min.js"></script>
+  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/Scripts/app.js"></script>
+  <script src="/chart.js/dist/chart.js"></script>
+
+</body>
+</html>
