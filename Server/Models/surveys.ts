@@ -2,14 +2,18 @@ import mongoose from "mongoose";
 import moment from "moment";
 const Schema = mongoose.Schema; // alias for mongoose Schema
 
+import user from '../Models/user';
 
 const SurveySchema = new Schema
 ({
     title: String,
     author: String,
-    start_Date: Date,
-    end_Date: Date,
+    user_id: String,
+    start_Date: String,
+    end_Date: String,
     isActive: Boolean,
+    questionText: String,
+
     created: 
     {
         type: String,
