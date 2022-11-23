@@ -1,15 +1,10 @@
 {
-  "name": "tix",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node server.js"
-  },
-    "engines": {
-    "node": "^14.17.5",
-    "npm": "^6.14.15",
-    "yarn": "1.22.11"
-  },
+  "name": "Pink-Banana-Servey",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/miaaow42/Pink-Banana-Servey.git",
+  "author": "HyoanMoon <tjdud24as@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@popperjs/core": "^2.11.6",
