@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar fixed-top x-navbar">
+  <a class="navbar-brand" href="/"> <img src="/images/groupProjectLogo.png" alt="Logo" width="60px" style="margin: 3px; " /> </a>
+  <div class="container-fluid" >
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+
+
+
+        <li class="nav-item">
+
+          <% if (title == "All Survey List"){ %>
+            <a class="nav-link active" <% } else { %> <a class="nav-link" <% } %> href="/survey-list-all"><i
+                class="fas fa-list fa-lg"></i> Survey List</a>
+          </li>
+
+          <% if(displayName) { %>
+            <% if (title == "Survey List"){ %>
+            <li class="nav-link active"<% } else { %> <a class="nav-link" <% } %> href="/survey-list" class="nav-link"><i class="fas fa-cogs"></i> Modify My Survey</a></li>
+            <li class="navbar-text"><i class="fas fa-user-circle"></i></i> Hi, <%= displayName %></li>
+            <li class="nav-item"><a href="/sign-out" class="nav-link">
+                <i class="fas fa-lg fa-sign-out-alt"></i> Sign Out</a></li>
+            <% } else { %>
+              <% if (title == "Sign In"){ %>
+                <a class="nav-link active" <% } else { %> <a class="nav-link" <% } %> href="/sign-in">
+                 <i class="fas fa-lg fa-sign-in-alt"></i> Sign In</a></li>
+            <% } %>
+          </ul>
+    </div>
+  </div>
+</nav>

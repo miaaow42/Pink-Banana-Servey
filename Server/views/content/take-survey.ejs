@@ -1,0 +1,128 @@
+<div class="flex-wrapper">
+  <div class="container" style="margin-top: 70px;">
+    <div class="row justify-content-lg-center g-3">
+      <form method="POST" class="col-lg-8 col-md-10 col-sm-10">
+        <div class="mx-0 mx-sm-auto" style="margin-top: 50px;">
+          <div class="card2">
+            <div class="card-body">
+              <div class="text-center">
+                <i class="far fa-file-alt fa-4x mb-3 text-primary"></i>
+                <p>
+                  <strong>Your opinion matters</strong>
+                </p>
+                <p>
+                  Have some ideas how to improve our product?
+                  <strong>Give us your feedback.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <% for(let count=0; count < list.length; count++) { %>
+        <div class="card">
+          <div class="card-body">
+            <p class="text-left">
+              <th scope="row"><%= count + 1 %>.</th>
+
+              <% if(list[count].questionType == "Multiple Choice") { %>
+
+              <strong><%= list[count].questionText %></strong>
+            </p>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="<%= list[count].questionText%>" id="radio2Example1"
+                value="<%= list[count].first_Choice %>" />
+              <label class="form-check-label" for="radio2Example1">
+                <%= list[count].first_Choice %>
+              </label>
+            </div>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="<%= list[count].questionText %>" id="radio2Example2"
+                value="<%= list[count].second_Choice %>" />
+              <label class="form-check-label" for="radio2Example2">
+                <%= list[count].second_Choice %>
+              </label>
+            </div>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="<%= list[count].questionText %>" id="radio2Example3"
+                value="<%= list[count].third_Choice %>" />
+              <label class="form-check-label" for="radio2Example3">
+                <%= list[count].third_Choice %>
+              </label>
+            </div>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="<%= list[count].questionText %>" id="radio2Example4"
+                value="<%= list[count].fourth_Choice %>" />
+              <label class="form-check-label" for="radio2Example4">
+                <%= list[count].fourth_Choice %>
+              </label>
+            </div>
+            <% } else if(list[count].questionType == "True/False"){ %>
+            <strong><%= list[count].questionText %></strong>
+            </p>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="<%= list[count].questionText %>" id=" radio2Example1"
+                value="True" />
+              <label class="form-check-label" for="radio2Example1">
+                True
+              </label>
+            </div>
+
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="<%= list[count].questionText %>" id="radio2Example2"
+                value="False" />
+              <label class="form-check-label" for="radio2Example1">
+                False
+              </label>
+            </div>
+
+            <% } else {%>
+            <strong><%= list[count].questionText %></strong>
+            </p>
+            <div class="form-group">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                name="q<%= count + 1 %>"></textarea>
+            </div>
+            <% } %>
+          </div>
+        </div>
+        <br>
+        <% } %>
+
+
+
+
+        <div class="card-footer text-end">
+          <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+              class="fas fa-check"></i> Complete</a>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content card2" style="background-color: rgba(0, 0, 0, 0.800);">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thanks for your feedback!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                You can go back to survey list now
+              </div>
+              <div class="modal-footer">
+                <a href="/survey-list-all" class="btn btn-primary">Go Back</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div>
+    </div>
+  </div>
+</div>

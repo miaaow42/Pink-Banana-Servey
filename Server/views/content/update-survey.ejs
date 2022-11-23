@@ -1,0 +1,39 @@
+<div class="flex-wrapper ">
+    <div class="container" style="margin-top: 70px;">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+
+            <h1 style="text-align: center">Create Survey</h1>
+
+            <form method="POST" class="col-lg-6 col-md-10 col-sm-10">
+
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 25%;"
+                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">33%</div>
+                </div>
+
+                <br>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="name">Survey Name</span>
+                    <input id="name" type="text" class="form-control" placeholder="Name" aria-label="Name"
+                        aria-describedby="Contact Name" name="name" value="<%= list.title %>" required>
+                </div>
+
+                <!-- <div class="input-group mb-3">
+            <span class="input-group-text" id="name">Author</span>
+            <input id="author" type="text" class="form-control" placeholder="Author" aria-label="Author" aria-describedby="Contact Number"
+            name="author" value="<%= list.author%>" required>
+        </div>  -->
+
+
+
+                <button type="submit" class="btn btn-primary" id="editButton"><i class="fas fa-arrow-right"></i>
+                    Next</button>
+
+                <a href="/survey-list" class="btn btn-danger btn"><i class="fas fa-backspace fa-lg"></i><span
+                        class="d-none d-md-inline  text-white"> Cancel</span></a>
+
+            </form>
+        </div>
+    </div>
+</div>
