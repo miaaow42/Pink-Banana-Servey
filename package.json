@@ -1,8 +1,11 @@
 {
-  "name": "Pink-Banana-Servey",
+  "name": "pink-banana-servey",
   "version": "1.0.0",
   "main": "server.js",
-  "repository": "https://github.com/miaaow42/Pink-Banana-Servey.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miaaow42/Pink-Banana-Servey.git"
+  },
   "author": "HyoanMoon <tjdud24as@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -56,5 +59,13 @@
     "@types/phantomjs": "^1.9.32",
     "@types/puppeteer": "^7.0.4",
     "google-charts": "^2.0.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "A survey site using ejs, express, mongodb, nodejs. \r https://survey-site-project.herokuapp.com/",
+  "bugs": {
+    "url": "https://github.com/miaaow42/Pink-Banana-Servey/issues"
+  },
+  "homepage": "https://github.com/miaaow42/Pink-Banana-Servey#readme"
 }
