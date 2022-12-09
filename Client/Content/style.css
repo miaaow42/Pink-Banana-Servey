@@ -78,6 +78,9 @@ h1 {
   font-size: xx-large;
 }
 
+h2 {
+   color: #ffffff;
+
 h5 {
   font-family:  "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   color:	rgb(255, 255, 255) ;
@@ -168,4 +171,6 @@ footer {
   background-color:black;
   border:black;
 }
-
+.modal-body{
+  color:#ffffff;
+}
